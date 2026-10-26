@@ -1,0 +1,38 @@
+import java.util.Scanner;
+
+public class CityGuideApplication {
+public static void main(String[] args) {
+Scanner sc = new Scanner(System.in);
+
+String[] name = {"A2B", "Burger King", "Anjappar", "Dominos"};
+String[] cuisine = {"South Indian", "Fast Food",
+"South Indian", "Pizza"};
+String[] location = {"Trichy", "Chennai",
+"Trichy", "Chennai"};
+double[] rating = {4.2, 4.0, 4.5, 4.3};
+
+System.out.println("=== CITY GUIDE APPLICATION ===");
+System.out.print("Enter cuisine (South Indian/Fast Food/Pizza): ");
+String choice = sc.nextLine();
+
+System.out.println("\nRecommended Restaurants:");
+
+boolean found = false;
+
+for (int i = 0; i < name.length; i++) {
+if (cuisine[i].equalsIgnoreCase(choice)) {
+System.out.println("\nName: " + name[i]);
+System.out.println("Cuisine: " + cuisine[i]);
+System.out.println("Location: " + location[i]);
+System.out.println("Rating: " + rating[i]);
+found = true;
+}
+}
+
+if (!found) {
+System.out.println("No matching restaurants found.");
+}
+
+sc.close();
+}
+}
